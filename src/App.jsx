@@ -1,9 +1,9 @@
-import { useState } from "react";
 import "./App.css";
-import "./components/UserCardList";
+import UserCardList from "./components/UserCardList";
+import { usersData } from "./data/usersData";
 
 function App() {
-  return <UserCardList />;
+  return <UserCardList usersArray={usersData} />;
 }
 
 export default App;
