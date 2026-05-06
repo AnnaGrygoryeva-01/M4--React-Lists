@@ -1,5 +1,6 @@
-import styles from "./UserCard.module.css";
 import React, { Component } from "react";
+import styles from "./UserCard.module.css";
+import { getSocialIcon } from "../../helpers/socialLinksHelper";
 
 class UserCard extends Component {
   constructor(props) {
@@ -8,13 +9,6 @@ class UserCard extends Component {
       hasImageError: false,
     };
   }
-
-  getSocialIcon = (url) => {
-    if (url.includes("facebook.com")) return "fa-brands fa-facebook";
-    if (url.includes("instagram.com")) return "fa-brands fa-instagram";
-    if (url.includes("twitter.com")) return "fa-brands fa-twitter";
-    return "fa-solid fa-link";
-  };
 
   handleImageError = () => {
     this.setState({ hasImageError: true });
@@ -25,7 +19,6 @@ class UserCard extends Component {
     const { hasImageError } = this.state;
 
     const fullName = `${firstName} ${lastName}`.trim();
-
     const showPlaceholder = !profilePicture || hasImageError;
 
     return (
@@ -52,7 +45,7 @@ class UserCard extends Component {
               {contacts.map((url, index) => (
                 <li key={index}>
                   <a href={url} target="_blank" rel="noopener noreferrer">
-                    <i className={this.getSocialIcon(url)}></i>
+                    <i className={getSocialIcon(url)}></i>
                   </a>
                 </li>
               ))}
@@ -65,4 +58,5 @@ class UserCard extends Component {
     );
   }
 }
+
 export default UserCard;

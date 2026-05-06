@@ -18,7 +18,7 @@ const usersData = [
     profilePicture:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dwayne_Johnson_2%2C_2013.jpg/800px-Dwayne_Johnson_2%2C_2013.jpg",
     contacts: [
-      "https://www.facebook.com/DwayneJohnson",
+      "https://www.threds.com/DwayneJohnson",
       "https://www.instagram.com/therock/?hl=ru",
     ],
   },

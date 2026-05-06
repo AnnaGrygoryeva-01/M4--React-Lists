@@ -3,6 +3,10 @@ import styles from "./UserCardList.module.css";
 import UserCard from "../UserCard";
 
 class UserCardList extends Component {
+  filterUsers = (user) => {
+    return user.firstName || user.lastName;
+  };
+
   mapUsers = ({ id, firstName, lastName, profilePicture, contacts }) => (
     <UserCard
       key={id}
@@ -18,7 +22,7 @@ class UserCardList extends Component {
 
     return (
       <section className={styles.cardList}>
-        {usersArray.map(this.mapUsers)}
+        {usersArray.filter(this.filterUsers).map(this.mapUsers)}
       </section>
     );
   }
